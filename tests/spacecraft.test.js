@@ -64,4 +64,34 @@ describe('Spacecraft', () => {
         });
     });
 
+    describe('Test for turnUp', () => {
+        test.each([
+            ['N', 'Up'],
+            ['S', 'Up'],
+            ['E', 'Up'],
+            ['W', 'Up'],
+            ['Up', 'Up'],
+            ['Down', 'Down'],
+        ])('should turn up correctly for initial direction %s', (initialDirection, expectedDirection) => {
+            const spacecraft = new Spacecraft(0, 0, 0, initialDirection);
+            spacecraft.turnUp();
+            expect(spacecraft.direction).toBe(expectedDirection);
+        });
+    });
+
+    describe('Test for turnDown', () => {
+        test.each([
+            ['N', 'Down'],
+            ['S', 'Down'],
+            ['E', 'Down'],
+            ['W', 'Down'],
+            ['Up', 'Up'],
+            ['Down', 'Down'],
+        ])('should turn down correctly for initial direction %s', (initialDirection, expectedDirection) => {
+            const spacecraft = new Spacecraft(0, 0, 0, initialDirection);
+            spacecraft.turnDown();
+            expect(spacecraft.direction).toBe(expectedDirection);
+        });
+    });
+
 });

@@ -110,11 +110,37 @@ class Spacecraft {
     }
 
     executeCommands(commands) {
-
+        for (const command of commands) {
+            switch (command) {
+                case 'f':
+                    this.moveForward();
+                    break;
+                case 'b':
+                    this.moveBackward();
+                    break;
+                case 'l':
+                    this.turnLeft();
+                    break;
+                case 'r':
+                    this.turnRight();
+                    break;
+                case 'u':
+                    this.turnUp();
+                    break;
+                case 'd':
+                    this.turnDown();
+                    break;
+                default:
+                    console.log(`Unknown command: ${command}`);
+            }
+        }
     }
 }
 
 const spacecraft = new Spacecraft(0, 0, 0, 'N');
 const commands = ["f", "r", "u", "b", "l"];
 spacecraft.executeCommands(commands);
+
+console.log("Final Position:", spacecraft.position);
+console.log("Final Direction:", spacecraft.direction);
 module.exports = Spacecraft;

@@ -34,4 +34,17 @@ describe('Spacecraft', () => {
         });
     });
 
+    describe('Test for turnLeft', () => {
+        test.each([
+            ['N', 'W'],
+            ['W', 'S'],
+            ['S', 'E'],
+            ['E', 'N'],
+        ])('should turn left correctly from direction %s to %s', (initialDirection, expectedDirection) => {
+            const spacecraft = new Spacecraft(0, 0, 0, initialDirection);
+            spacecraft.turnLeft();
+            expect(spacecraft.direction).toBe(expectedDirection);
+        });
+    });
+
 });

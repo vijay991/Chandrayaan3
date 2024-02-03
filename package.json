@@ -4,7 +4,8 @@
   "description": "Galactic Space Craft Control for Chandrayaan 3 Lunar Craft",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "npx jest"
   },
   "author": "",
   "license": "ISC",

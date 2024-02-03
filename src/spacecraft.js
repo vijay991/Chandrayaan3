@@ -97,6 +97,18 @@ class Spacecraft {
         }
     }
 
+    turnUp() {
+        if (this.direction !== 'Up' && this.direction !== 'Down') {
+            this.direction = 'Up';
+        }
+    }
+
+    turnDown() {
+        if (this.direction !== 'Up' && this.direction !== 'Down') {
+            this.direction = 'Down';
+        }
+    }
+
     executeCommands(commands) {
 
     }

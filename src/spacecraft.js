@@ -130,17 +130,9 @@ class Spacecraft {
                 case 'd':
                     this.turnDown();
                     break;
-                default:
-                    console.log(`Unknown command: ${command}`);
             }
         }
     }
 }
 
-const spacecraft = new Spacecraft(0, 0, 0, 'N');
-const commands = ["f", "r", "u", "b", "l"];
-spacecraft.executeCommands(commands);
-
-console.log("Final Position:", spacecraft.position);
-console.log("Final Direction:", spacecraft.direction);
 module.exports = Spacecraft;

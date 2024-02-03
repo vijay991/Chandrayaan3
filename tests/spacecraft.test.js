@@ -94,4 +94,18 @@ describe('Spacecraft', () => {
         });
     });
 
+    describe('Test for executeCommands', () => {
+        test.each([
+            [['f', 'r', 'u', 'b', 'l'], [0, 1, -1], 'N'],
+            [['l', 'l', 'l', 'l'], [0, 0, 0], 'N'],
+            [['b', 'b', 'b'], [0, -3, 0], 'N'],
+            [['u', 'u', 'u'], [0, 0, 0], 'Up'],
+        ])('should execute commands correctly', (commands, expectedPosition, expectedDirection) => {
+            const spacecraft = new Spacecraft(0, 0, 0, 'N');
+            spacecraft.executeCommands(commands);
+
+            expect(spacecraft.position).toEqual(expectedPosition);
+            expect(spacecraft.direction).toBe(expectedDirection);
+        });
+    });
 });

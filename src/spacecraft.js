@@ -6,7 +6,26 @@ class Spacecraft {
     }
 
     moveForward() {
-
+        switch (this.direction) {
+            case 'N':
+                this.position[1]++
+                break;
+            case 'S':
+                this.position[1]--
+                break;
+            case 'E':
+                this.position[0]++
+                break;
+            case 'W':
+                this.position[0]--
+                break;
+            case 'Up':
+                this.position[2]++
+                break;
+            case 'Down':
+                this.position[2]--
+                break;
+        }
     }
     executeCommands(commands) {
 

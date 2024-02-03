@@ -65,8 +65,15 @@ class Spacecraft {
             case 'W':
                 this.direction = 'S';
                 break;
+            case 'Up':
+                this.direction = 'N';
+                break;
+            case 'Down':
+                this.direction = 'S';
+                break;
         }
     }
+
 
     executeCommands(commands) {
 

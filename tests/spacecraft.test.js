@@ -40,6 +40,8 @@ describe('Spacecraft', () => {
             ['W', 'S'],
             ['S', 'E'],
             ['E', 'N'],
+            ['Up', 'N'],
+            ['Down', 'S']
         ])('should turn left correctly from direction %s to %s', (initialDirection, expectedDirection) => {
             const spacecraft = new Spacecraft(0, 0, 0, initialDirection);
             spacecraft.turnLeft();

@@ -16,7 +16,7 @@ Follow these steps to run the project:
    ```bash
    npm run start
    ```
-   Once you run this command it will ask for the input in CLI. Give input in form of comma seprated value of commands like “f”, “r”, “u”, “b”, “l”. 
+   Once you run this command it will ask for the input in CLI. Give input in form of comma seprated value of commands like f, r, u, b, l. 
    It should give you output of final position and final direction
 
 3. Run Test

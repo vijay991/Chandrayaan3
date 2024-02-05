@@ -6,12 +6,11 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-rl.question('Enter commands (e.g., ["f", "r", "u"]): ', (commands) => {
+rl.question('Enter commands (e.g., f,u,r): ', (commands) => {
     const spacecraft = new Spacecraft(0, 0, 0, 'N');
+    commands = commands.split(',')
 
-    for (const command of commands) {
-        spacecraft.executeCommands(command);
-    }
+    spacecraft.executeCommands(commands);
 
     console.log('Final Position:', spacecraft.position);
     console.log('Final Direction:', spacecraft.direction);

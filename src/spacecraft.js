@@ -35,6 +35,19 @@ class Spacecraft {
         return oppositeDirections[this.direction];
     }
 
+    calculateNewDirection(currentDirection, turn) {
+        const directionMap = {
+            'N': { 'left': 'W', 'right': 'E' },
+            'S': { 'left': 'E', 'right': 'W' },
+            'E': { 'left': 'N', 'right': 'S' },
+            'W': { 'left': 'S', 'right': 'N' },
+            'Up': { 'left': 'N', 'right': 'S' },
+            'Down': { 'left': 'S', 'right': 'N' },
+        };
+
+        return directionMap[currentDirection][turn];
+    }
+
     executeCommands(commands) {
         const actions = {
             'f': () => {
@@ -44,6 +57,14 @@ class Spacecraft {
             'b': () => {
                 const backwardDirection = this.directions[this.getOppositeDirection()];
                 this.move(backwardDirection);
+            },
+            'l': () => {
+                const leftTurnDirection = this.calculateNewDirection(this.direction, 'left');
+                this.turn(leftTurnDirection);
+            },
+            'r': () => {
+                const rightTurnDirection = this.calculateNewDirection(this.direction, 'right');
+                this.turn(rightTurnDirection);
             },
             'u': () => this.turn('Up'),
             'd': () => this.turn('Down'),

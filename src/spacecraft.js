@@ -16,6 +16,12 @@ class Spacecraft {
         this.position = this.position.map((coord, index) => coord + movementVector[index])
     }
 
+    turn(newDirection) {
+        if (this.directions.hasOwnProperty(newDirection)) {
+            this.direction = newDirection;
+        }
+    }
+
     getOppositeDirection() {
         const oppositeDirections = {
             'N': 'S',
@@ -38,7 +44,9 @@ class Spacecraft {
             'b': () => {
                 const backwardDirection = this.directions[this.getOppositeDirection()];
                 this.move(backwardDirection);
-            }
+            },
+            'u': () => this.turn('Up'),
+            'd': () => this.turn('Down'),
         }
 
         for (const command of commands) {
